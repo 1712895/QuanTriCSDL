@@ -18,10 +18,20 @@ namespace WebTest.Models
         [BsonElement("ThuongHieu")]
         public string ThuongHieu { get; set; }
     }
+    public class categories
+    {
+        [BsonElement("ten")]
+        public string ten { get; set; }
+        [BsonElement("parent")]
+        public string parent { get; set; }
+        [BsonElement("path")]
+        public string path  { get; set; }
+
+    }
     public class ProductModel
     {
         [BsonId]
-        public ObjectId Id { get; set; }
+        public ObjectId? Id { get; set; }
         [BsonElement("sku")]
         public string sku { get; set; }
         [BsonElement("Ten")]
@@ -30,12 +40,11 @@ namespace WebTest.Models
         public string MoTA { get; set; }
         [BsonElement("ThongSoKyThuat")]
         public Thongsokythuat ThongSoKyThuat { get; set; }
-        [BsonElement("NguyenKien")]
-        public List<string> NguyenKien { get; set; }
         [BsonElement("Categories")]
-        public List<string> Categories { get; set; }
+        public categories Categories { get; set; }
         [BsonElement("giaTien")]
         public string giaTien   { get; set; }
-
+        [BsonElement("img")]
+        public string img { get; set; }
     }
 }
