@@ -12,6 +12,7 @@ using MongoDB.Driver;
 
 namespace WebTest.Controllers
 {
+    
     public class ProductController : Controller
     {
         private MongoDBContext dbcontext;
@@ -22,6 +23,7 @@ namespace WebTest.Controllers
             dbcontext = new MongoDBContext();
             productCollection = dbcontext.database.GetCollection<ProductModel>("Products");
         }
+        [Route("Product")]
         // GET: Product
         public ActionResult Index()
         {
@@ -30,11 +32,24 @@ namespace WebTest.Controllers
         }
 
         // GET: Product/Details/5
+        [Route("Product/Details/{id}")]
         public ActionResult Details(string id)
         {
             var productId = new ObjectId(id);
             var product = productCollection.AsQueryable<ProductModel>().SingleOrDefault(x => x.Id == productId);
             return View(product);
+        }
+        [Route("Product/{loai}")]
+        public ActionResult PhanLoaiProduct(string loai)
+        {
+            var category = productCollection.AsQueryable<ProductModel>().Where(x => (x.Categories.parent.Equals(loai) || x.Categories.path.Equals(loai)));
+            return View(category);
+        }
+        [Route("Product/{loai}/{gioitinh}")]
+        public ActionResult PhanLoaiProductvaGioi(string loai, string gioitinh)
+        {
+            var category = productCollection.AsQueryable<ProductModel>().Where(x => x.Categories.parent.Contains(loai) && x.Categories.path.Contains(gioitinh));
+            return View(category);
         }
     }
 }
