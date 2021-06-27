@@ -65,7 +65,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="@Url.Action("Index", "Home")">
                 Zay
             </a>
 
@@ -147,13 +147,19 @@
                     <div class="col-md-4 pt-5">
                         <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            <li><a class="text-decoration-none" href="#">Túi</a></li>
-                            <li><a class="text-decoration-none" href="#">Nón</a></li>
-                            <li><a class="text-decoration-none" href="#">Mắt Kính</a></li>
-                            <li><a class="text-decoration-none" href="#">Túi Nữ</a></li>
-                            <li><a class="text-decoration-none" href="#">Túi Nam</a></li>
-                            <li><a class="text-decoration-none" href="#">Mắt Kính Nữ</a></li>
-                            <li><a class="text-decoration-none" href="#">Mắt Kính Nam</a></li>
+                            <li>
+                            @Html.ActionLink("Túi", "Tui", "Product", new { area = "" }, new { @class = "text-decoration-none" })
+                            </li>
+                            <li>
+                            @Html.ActionLink("Nón", "Non", "Product", new { area = "" }, new { @class = "text-decoration-none" })
+                           </li>
+                            <li>
+                            @Html.ActionLink("Kính", "Kinh", "Product", new { area = "" }, new { @class = "text-decoration-none" })
+                                </li>
+                            <li><a class="text-decoration-none" href="/Product/Tui/Nu">Túi Nữ</a></li>
+                            <li><a class="text-decoration-none" href="/Product/Tui/Nam">Túi Nam</a></li>
+                            <li><a class="text-decoration-none" href="/Product/Kinh/Nu">Mắt Kính Nữ</a></li>
+                            <li><a class="text-decoration-none" href="/Product/Kinh/Nam">Mắt Kính Nam</a></li>
                         </ul>
                     </div>
 
