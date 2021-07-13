@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanTriCSDLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Hinhthucgiao" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinhthucthanhtoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="TongTien" Type="float" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="Giatien" Type="float" />
+    <Property Name="Mota" Type="nvarchar(max)" />
+    <Property Name="Nhasanxuat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="TenProduct" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Diachi" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Namsinh" Type="int" />
+    <Property Name="Sodienthoai" Type="nchar" MaxLength="10" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <Function Name="sp_ThanhToanGioHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Hinhthucgiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="Hinhthucthanhtoan" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="TongTien" Type="float" Mode="In" />
+  </Function>
+  <EntityContainer Name="QuanTriCSDLModelStoreContainer">
+    <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

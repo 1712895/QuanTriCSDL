@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanTriCSDLModelStoreContainer" CdmEntityContainer="QuanTriCSDLEntities">
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="QuanTriCSDLModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Giatien" ColumnName="Giatien" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Nhasanxuat" ColumnName="Nhasanxuat" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="TenProduct" ColumnName="TenProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="QuanTriCSDLModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Namsinh" ColumnName="Namsinh" />
+          <ScalarProperty Name="Sodienthoai" ColumnName="Sodienthoai" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ThanhToanGioHang" FunctionName="QuanTriCSDLModel.Store.sp_ThanhToanGioHang" />
+    <EntitySetMapping Name="DonHang">
+      <EntityTypeMapping TypeName="QuanTriCSDLModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Hinhthucthanhtoan" ColumnName="Hinhthucthanhtoan" />
+          <ScalarProperty Name="Hinhthucgiao" ColumnName="Hinhthucgiao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

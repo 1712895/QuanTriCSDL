@@ -46,5 +46,7 @@ namespace WebTest.Models
         public string giaTien   { get; set; }
         [BsonElement("img")]
         public string img { get; set; }
+        [BsonElement("ProductID")]
+        public Int32 ProductID    { get; set; }
     }
 }

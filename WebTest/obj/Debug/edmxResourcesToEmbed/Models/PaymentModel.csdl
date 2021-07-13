@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanTriCSDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="Giatien" Type="Double" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nhasanxuat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="TenProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Diachi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Namsinh" Type="Int32" />
+    <Property Name="Sodienthoai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="QuanTriCSDLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <FunctionImport Name="sp_ThanhToanGioHang">
+      <Parameter Name="Hinhthucgiao" Mode="In" Type="String" />
+      <Parameter Name="Hinhthucthanhtoan" Mode="In" Type="String" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="TongTien" Mode="In" Type="Double" />
+    </FunctionImport>
+    <EntitySet Name="DonHang" EntityType="QuanTriCSDLModel.DonHang" />
+  </EntityContainer>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Hinhthucgiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hinhthucthanhtoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="TongTien" Type="Double" />
+  </EntityType>
+</Schema>

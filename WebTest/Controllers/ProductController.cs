@@ -23,11 +23,19 @@ namespace WebTest.Controllers
             dbcontext = new MongoDBContext();
             productCollection = dbcontext.database.GetCollection<ProductModel>("Products");
         }
-        [Route("Product")]
+        
         // GET: Product
+
+      
+        [Route("Product")]
         public ActionResult Index()
         {
+            /*
+                1. tim cach xuat products ra man hinh console de debug
+                2. Tim cach ket noi vs redis
+             */
             List<ProductModel> products = productCollection.AsQueryable<ProductModel>().ToList();
+            
             return View(products);
         }
 
