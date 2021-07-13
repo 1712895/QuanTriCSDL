@@ -4,11 +4,13 @@
     <Key>
       <PropertyRef Name="ProductID" />
       <PropertyRef Name="UserID" />
+      <PropertyRef Name="MaDonHang" />
     </Key>
     <Property Name="Hinhthucgiao" Type="nvarchar" MaxLength="50" />
     <Property Name="Hinhthucthanhtoan" Type="nvarchar" MaxLength="50" />
     <Property Name="ProductID" Type="int" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="MaDonHang" Type="int" Nullable="false" />
     <Property Name="TongTien" Type="float" />
   </EntityType>
   <EntityType Name="Product">

@@ -19,5 +19,6 @@ namespace WebTest.Models
         public int ProductID { get; set; }
         public int UserID { get; set; }
         public Nullable<double> TongTien { get; set; }
+        public int MaDonHang { get; set; }
     }
 }

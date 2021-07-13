@@ -28,6 +28,7 @@
     <EntitySetMapping Name="DonHang">
       <EntityTypeMapping TypeName="QuanTriCSDLModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />

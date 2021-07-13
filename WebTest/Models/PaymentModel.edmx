@@ -9,11 +9,13 @@
           <Key>
             <PropertyRef Name="ProductID" />
             <PropertyRef Name="UserID" />
+            <PropertyRef Name="MaDonHang" />
           </Key>
           <Property Name="Hinhthucgiao" Type="nvarchar" MaxLength="50" />
           <Property Name="Hinhthucthanhtoan" Type="nvarchar" MaxLength="50" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="MaDonHang" Type="int" Nullable="false" />
           <Property Name="TongTien" Type="float" />
         </EntityType>
         <EntityType Name="Product">
@@ -88,12 +90,14 @@
           <Key>
             <PropertyRef Name="ProductID" />
             <PropertyRef Name="UserID" />
+            <PropertyRef Name="MaDonHang" />
           </Key>
           <Property Name="Hinhthucgiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Hinhthucthanhtoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="TongTien" Type="Double" />
+          <Property Name="MaDonHang" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -128,6 +132,7 @@
           <EntitySetMapping Name="DonHang">
             <EntityTypeMapping TypeName="QuanTriCSDLModel.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
+                <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
